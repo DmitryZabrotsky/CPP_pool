@@ -23,6 +23,10 @@ private:
 	std::string favorite_meal;
 	std::string underwear_color;
 	std::string darkest_secret;
+
+public:
+	void FillContact(void);
+	void PrintContact(void);
 };
 
 #endif

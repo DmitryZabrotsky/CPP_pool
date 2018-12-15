@@ -14,18 +14,24 @@ void intro(void)
 
 int main(void)
 {
+	int i;
 	std::string command;
+	Contact contacts[8];
 
 	intro();
 	while (command != "EXIT")
 	{
-		if (command == "ADD")
+		i = 0;
+		if (command == "ADD" && i <= 8)
 		{
-//			handle_add();
+			contacts[i].FillContact();
+			i++;
+			command = "";
 		}
 		else if (command == "SEARCH")
 		{
-//			handle_search();
+			contacts[i].PrintContact();
+			command = "";
 		}
 		else
 		{
