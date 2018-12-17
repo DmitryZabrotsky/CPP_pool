@@ -6,12 +6,12 @@
 #define CONTACT_HPP
 
 #include <iostream>
-#include <string>
 #include <iomanip>
 
 class Contact {
 
 private:
+	int index;
 	std::string first_name;
 	std::string last_name;
 	std::string nickname;
@@ -25,7 +25,8 @@ private:
 	std::string darkest_secret;
 
 public:
-	void FillContact(void);
+	void FillContact(int i);
+	void PrintForSearch(void);
 	void PrintContact(void);
 };
 

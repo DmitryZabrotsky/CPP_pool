@@ -19,25 +19,37 @@ int main(void)
 	Contact contacts[8];
 
 	intro();
+	i = 0;
 	while (command != "EXIT")
 	{
-		i = 0;
-		if (command == "ADD" && i <= 8)
+		if (command == "ADD" && i < 8)
 		{
-			contacts[i].FillContact();
+			contacts[i].FillContact(i + 1);
 			i++;
 			command = "";
 		}
 		else if (command == "SEARCH")
 		{
-			contacts[i].PrintContact();
+			int j = 0;
+			while(j <= i)
+			{
+				contacts[j].PrintForSearch();
+				// contacts[j].PrintContact();
+				j++;
+			}
 			command = "";
 		}
 		else
 		{
-			std::cout << "Enter one of the following command: ADD, SEARCH, EXIT\n";
+			if (i >= 8)
+			{
+				std::cout << "Phonebook is full. U can`t ADD any more contacts.\n";
+				std::cout << "Enter one of the following command: SEARCH, EXIT\n";
+			}
+			else
+				std::cout << "Enter one of the following command: ADD, SEARCH, EXIT\n";
 			std::getline(std::cin, command);
-			std::cout << command << std::endl;
+			// std::cout << command << std::endl;
 		}
 	}
 	return (0);
