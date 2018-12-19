@@ -1,8 +1,8 @@
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 NAME = phonebook
-SRC = main.cpp Contact.cpp
-INCL = Contact.hpp
+SRC = main.cpp Contact.cpp Phonebook.cpp
+INCL = Contact.hpp Phonebook.hpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

@@ -4,9 +4,8 @@
 
 #include "Contact.hpp"
 
-void Contact::FillContact(int i)
+void Contact::FillContact(void)
 {
-	index = i;
 	std::cout << "Enter first name: ";
 	std::getline(std::cin, first_name);	
 	std::cout << "Enter last name: ";
@@ -33,13 +32,18 @@ void Contact::FillContact(int i)
 
 void Contact::PrintForSearch(void)
 {
-	if (index > 0)
-	{
-		std::cout << index << std::endl;
-		std::cout << first_name << std::endl;
-		std::cout << last_name << std::endl;
-		std::cout << nickname << std::endl;
-	}
+	if (first_name.length() > 10)
+		std::cout << first_name.substr(0, 9) + ".|";
+	else
+		std::cout << std::setw(10) << first_name << "|";
+	if (last_name.length() > 10)
+		std::cout << last_name.substr(0, 9) + ".|";
+	else
+		std::cout << std::setw(10) << last_name << "|";
+	if (nickname.length() > 10)
+		std::cout << nickname.substr(0, 9) + ".|" << std::endl;
+	else
+		std::cout << std::setw(10) << nickname << "|" << std::endl;
 }
 
 void Contact::PrintContact(void)

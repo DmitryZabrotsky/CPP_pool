@@ -6,10 +6,18 @@
 #define PHONEBOOK_HPP
 
 #include "Contact.hpp"
+#include <sstream>
 
 class Phonebook
 {
-	
-}
+	private:
+		Contact contacts[8];
+		int		index;
 
-#endif PHONEBOOK_HPP
+	public:
+		Phonebook();
+		void	Add(void);
+		void	Search(void);
+};
+
+#endif
