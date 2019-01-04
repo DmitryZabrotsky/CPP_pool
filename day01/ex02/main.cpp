@@ -7,5 +7,20 @@
 
 int main(void)
 {
-	Zombie Carl = Zombie("assasin", "Carl");
+	Zombie stolb = Zombie("assasin", "Etsio");
+	stolb.announce();
+
+	std::cout << std::endl;
+
+	ZombieEvent lopata;
+	lopata.setZombieType("ogorodnik");
+	lopata.randomChump();
+
+	std::cout << std::endl;
+
+	ZombieEvent zombie;
+	zombie.setZombieType("varshik");
+	Zombie *walt = zombie.newZombie("Heizenberg");
+	walt->announce();
+	delete walt;
 }

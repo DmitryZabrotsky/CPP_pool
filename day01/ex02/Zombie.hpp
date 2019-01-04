@@ -2,6 +2,9 @@
 // Created by Dmitry ZABROTSKY on 12/25/18.
 //
 
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
+
 #include <iostream>
 
 class Zombie
@@ -17,3 +20,5 @@ public:
 	void announce(void);
 	
 };
+
+#endif
