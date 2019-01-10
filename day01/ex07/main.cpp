@@ -25,13 +25,22 @@ void replacer(char** av)
 	else
 	{
 		std::string word (av[2]);
+		std::string word2 (av[3]);
 		std::string buff;
+
+		if (word.empty() || word2.empty())
+			err("EMPTY string!");
 
 		while (std::getline(input_file, buff))
 		{
+			// replacing words in stirng
 			while (buff.find(word) != std::string::npos)
-				buff.replace(buff.find(word), word.length(), av[3]);
-			output_file << buff << "\n";
+				buff.replace(buff.find(word), word.length(), word2);
+
+			// writing string in target file
+			output_file << buff;
+			if (!input_file.eof())
+				output_file << "\n";
 		}
 
 		input_file.close();
