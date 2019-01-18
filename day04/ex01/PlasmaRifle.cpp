@@ -15,7 +15,7 @@ PlasmaRifle &PlasmaRifle::operator=(PlasmaRifle const &obj) {
 	return *this;
 }
 
-void PlasmaRifle::attack() {
+void PlasmaRifle::attack() const {
 	std::cout << "* piouuu piouuu piouuu *" << std::endl;
 }
 

@@ -2,9 +2,8 @@
 // Created by Dmitry ZABROTSKY on 2019-01-18.
 //
 
-#ifndef CPP_POOL_POWERFIST_HPP
-#define CPP_POOL_POWERFIST_HPP
-
+#ifndef POWERFIST_HPP
+#define POWERFIST_HPP
 
 #include "AWeapon.hpp"
 
@@ -17,7 +16,7 @@ public:
 
 	PowerFist &operator = (PowerFist const &obj);
 
-	virtual void attack();
+	virtual void attack() const;
 };
 
 

@@ -6,9 +6,7 @@
 
 PowerFist::PowerFist() : AWeapon("Power Fist", 50, 8) {}
 
-PowerFist::PowerFist(PowerFist const &obj) {
-	*this = obj;
-}
+PowerFist::PowerFist(PowerFist const &obj) : AWeapon(obj) {}
 
 PowerFist &PowerFist::operator=(PowerFist const &obj) {
 	setName(obj.getName());
@@ -17,7 +15,7 @@ PowerFist &PowerFist::operator=(PowerFist const &obj) {
 	return *this;
 }
 
-void PowerFist::attack() {
+void PowerFist::attack() const {
 	std::cout << "* pschhh... SBAM! *" << std::endl;
 }
 
