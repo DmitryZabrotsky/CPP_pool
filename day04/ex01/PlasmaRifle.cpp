@@ -4,7 +4,7 @@
 
 #include "PlasmaRifle.hpp"
 
-PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 21, 5) {}
+PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 5, 21) {}
 
 PlasmaRifle::PlasmaRifle(PlasmaRifle const &obj) : AWeapon(obj) {}
 
