@@ -4,48 +4,40 @@
 #include "AWeapon.hpp"
 #include "PowerFist.hpp"
 #include "PlasmaRifle.hpp"
+#include "SuperMutant.hpp"
 
 int main() {
 	Character *zaz = new Character("zaz");
 	std::cout << *zaz;
-
-// std::cout << "\n\n";
-
 	Enemy *b = new RadScorpion();
-	
-// std::cout << "\n\n";
-
 	AWeapon *pr = new PlasmaRifle();
 	AWeapon *pf = new PowerFist();
-
-// std::cout << "\n\n";
-
 	zaz->equip(pr);
 	std::cout << *zaz;
-
-// std::cout << "after 1 << \n\n";
-
 	zaz->equip(pf);
 	zaz->attack(b);
 	std::cout << *zaz;
-
-// std::cout << "after 2 << \n\n";
-
-
 	zaz->equip(pr);
 	std::cout << *zaz;
-
-// std::cout << "after 3 << \n\n";
-
+	zaz->attack(b);
+	std::cout << *zaz;
 	zaz->attack(b);
 	std::cout << *zaz;
 
-// std::cout << "after 4 << \n\n";
+	std::cout << "\n\t * additional * \n\n";
 
-	zaz->attack(b);
+	Enemy *s = new SuperMutant();
+	zaz->attack(s);
+	zaz->equip(pf);
 	std::cout << *zaz;
-
-// std::cout << "after 5 << \n\n";
+	zaz->attack(s);
+	std::cout << *zaz;
+	zaz->recoverAP();
+	zaz->recoverAP();
+	std::cout << *zaz;
+	zaz->attack(s);
+	std::cout << *zaz;
+	zaz->attack(s);
 
 	return 0;
 }
